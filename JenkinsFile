@@ -29,7 +29,7 @@ pipeline {
       archiveArtifacts artifacts: 'playwright-report/**, test-results/**, allure-results/**', allowEmptyArchive: true
       // Nếu dùng Allure plugin (đã cấu hình): chỉ cần bước này, không cần tự generat
 
-    bat 'npx allure generate allure-results --clean -o allure-report'
+    bat 'npx allure generate allure-results -o allure-report --clean'
     publishHTML(target: [
       reportDir: 'allure-report',
       reportFiles: 'index.html',
