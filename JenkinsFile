@@ -29,6 +29,7 @@ pipeline {
       archiveArtifacts artifacts: 'playwright-report/**, test-results/**, allure-results/**', allowEmptyArchive: true
       // Nếu dùng Allure plugin (đã cấu hình): chỉ cần bước này, không cần tự generat
       allure results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
+      allure commandline: 'allure2', results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
     }
   }
 }
