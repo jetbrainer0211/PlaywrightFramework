@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        withCredentials([string(credentialsId: 'pw-secret-key', variable: 'SECRET_KEY')]) {
+        withCredentials([string(credentialsId: 'secret-key', variable: 'SECRET_KEY')]) {
         bat 'npx playwright test --reporter=line'
         }
       }
