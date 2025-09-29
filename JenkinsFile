@@ -17,7 +17,7 @@ pipeline {
     stage('Test') {
       steps {
         withCredentials([string(credentialsId: 'secret-key', variable: 'SECRET_KEY')]) {
-        bat 'npx playwright test --reporter=line'
+        bat 'npx playwright test --reporter=line,allure-playwright'
         }
       }
     }
