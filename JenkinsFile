@@ -1,5 +1,5 @@
 pipeline {
-  agent any          // hoặc agent any         
+  agent any          // hoặc agent any        
   environment { CI = 'true' }
 
   stages {
