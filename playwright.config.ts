@@ -57,23 +57,23 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'firefox',
-      dependencies: ["setup"],
-      use: {
-        ...devices['Desktop Firefox'],
-        storageState: "./playwright/.auth/auth.json"
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   dependencies: ["setup"],
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     storageState: "./playwright/.auth/auth.json"
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      dependencies: ["setup"],
-      use: {
-        ...devices['Desktop Safari'],
-        storageState: "./playwright/.auth/auth.json"
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   dependencies: ["setup"],
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //     storageState: "./playwright/.auth/auth.json"
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
