@@ -34,7 +34,7 @@ pipeline {
       reportDir: 'allure-report',
       reportFiles: 'index.html',
       reportName: 'Allure Report',
-      keepAll: true, alwaysLinkToLastBuild: true, allowMissing: true
+      keepAll: true, alwaysLinkToLastBuild: false, allowMissing: true
     ])
 
     //   allure results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
