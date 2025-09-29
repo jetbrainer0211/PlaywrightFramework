@@ -1,0 +1,24 @@
+{
+    "Testcases": [
+         {
+            "Testcase": "[Positive] Login successfully",
+            "ExpectedResult": {
+                "SuccessMessage": "You are successfully logged in."
+            }
+        },
+        {
+            "Testcase": "[Negative] Login with wrong username",
+            "username": "admin1234@",
+            "ExpectedResult": {
+                "ErrorMessage": "Login Failed, Please try again"
+            }
+        },
+        {
+            "Testcase": "[Negative] Login with wrong password",
+            "password": "abc",
+            "ExpectedResult": {
+                "ErrorMessage": "Login Failed, Please try again"
+            }
+        }
+    ]
+}

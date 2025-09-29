@@ -1,0 +1,34 @@
+pipeline {
+  agent { label 'windows' }           // hoặc agent any
+  options { timestamps(); ansiColor('xterm') }
+  tools { nodejs 'Node20' }           // nếu đã cấu hình NodeJS tool trong Jenkins
+  environment { CI = 'true' }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Install deps') {
+      steps {
+        bat 'npm ci'
+        bat 'npx playwright install --with-deps'
+      }
+    }
+    stage('Test') {
+      steps {
+        bat 'npx playwright test --reporter=line'
+      }
+    }
+  }
+
+  post {
+    always {
+      // Lưu report/artefacts
+      archiveArtifacts artifacts: 'playwright-report/**, test-results/**, allure-results/**', allowEmptyArchive: true
+      // Nếu dùng Allure plugin (đã cấu hình): chỉ cần bước này, không cần tự generate
+      allure results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
+    }
+  }
+}
