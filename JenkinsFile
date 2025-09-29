@@ -1,7 +1,5 @@
 pipeline {
-  agent { label 'windows' }           // hoặc agent any
-  options { timestamps(); ansiColor('xterm') }
-  tools { nodejs 'Node20' }           // nếu đã cấu hình NodeJS tool trong Jenkins
+  agent { label 'windows' }           // hoặc agent any         
   environment { CI = 'true' }
 
   stages {
