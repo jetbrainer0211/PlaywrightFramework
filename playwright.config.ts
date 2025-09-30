@@ -42,7 +42,7 @@ export default defineConfig({
     trace: 'retain-on-failure'
   },
 
-  /* Configure projects for major browsers */
+  /* Configure projects for major browsers *
   projects: [
     {
       name: 'setup',
@@ -94,7 +94,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
+  
 
   /* Run your local dev server before starting the tests */
   // webServer: {
